@@ -12,7 +12,7 @@ pipeline {
       steps{
        
     
-       sh "docker build -t mohsindocker/dockerapp:${DOCKER_TAG}"
+       sh "cd C:\Users\mohammad02\.jenkins\workspace\docker_pipeline@script && docker build -t mohsindocker/dockerapp:${DOCKER_TAG}"
     
       }
     }
