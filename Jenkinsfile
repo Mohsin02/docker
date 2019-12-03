@@ -3,16 +3,17 @@ pipeline {
     registry = "mohsindocker/dockerapp"
     registryCredential = 'dockerhub'
     dockerImage = ''
+    DOCKER_TAG = getDockerTag()
   }
   agent any
   stages {
+   
     stage('Building image') {
       steps{
-        script {
-         // dockerImage = docker.build registry + ":$BUILD_NUMBER"
+       
     
-         dockerImage = docker.build("mohsindocker/dockerapp")
-        }
+       sh "docker build -t mohsindocker/dockerapp:${DOCKER_TAG}"
+    
       }
     }
     stage('Deploy Image') {
@@ -31,3 +32,10 @@ pipeline {
     }
   }
 }
+
+def getDockerTag(){
+    
+ def tag = sh script: 'git rev-parse HEAD', returnStdout: true
+ return tag
+}
+
