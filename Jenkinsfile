@@ -10,12 +10,13 @@ pipeline {
   stages {
    stage('Building image') {
       steps{
-       
+        script{
       
       docker.withServer('tcp://localhost:2375', 'swarm-certs') {
         docker.image('mysql:5').withRun('-p 3306:3306') {
             /* do things */
         }
+      }
     }
       }
     }
