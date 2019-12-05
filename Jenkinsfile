@@ -12,7 +12,7 @@ pipeline {
       steps{
        
     
-        bat label: '', script: 'docker build -t dockerapp:${DOCKER_TAG}  .'
+      
     
       }
     }
