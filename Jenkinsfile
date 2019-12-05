@@ -7,7 +7,14 @@ pipeline {
   }
   agent any
   stages {
-   
+   stage('Building image') {
+      steps{
+       
+    
+        bat label: '', script: 'C:\Program Files\Docker\Docker\Resources\bin\docker build -t dockerapp:${DOCKER_TAG}  .'
+    
+      }
+    }
     
     stage('Deploy Image') {
       steps{
