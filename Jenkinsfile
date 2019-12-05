@@ -11,8 +11,7 @@ pipeline {
       steps{
        
       
-     bat label: '', script: 'docker'
-    
+      def testImage = docker.build("test-image", "Dockerfile")
       }
     }
     
