@@ -3,6 +3,7 @@ pipeline {
     registry = "mohsindocker/dockerapp"
     registryCredential = 'dockerhub'
     dockerImage = ''
+    docker = ''
     DOCKER_TAG = getDockerTag()
   }
   agent any
