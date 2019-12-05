@@ -11,7 +11,7 @@ pipeline {
       steps{
        
       
-        bat label: '', script: 'set DOCKER_HOME="C:\\Program Files\\Docker\\Docker\\Resources\\bin\\docker" && %DOCKER_HOME% build -t dockerapp:${DOCKER_TAG}  .'
+     bat label: '', script: 'docker'
     
       }
     }
