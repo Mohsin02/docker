@@ -8,14 +8,7 @@ pipeline {
   agent any
   stages {
    
-    stage('Building image') {
-      steps{
-       
     
-      
-    
-      }
-    }
     stage('Deploy Image') {
       steps{
         script {
