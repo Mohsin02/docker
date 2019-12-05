@@ -10,8 +10,8 @@ pipeline {
    stage('Building image') {
       steps{
        
-       powershell label: '', script: 'docker build -t sampleapp .'
-        bat label: '', script: 'C:\\Program Files\\Docker\\Docker\\Resources\\bin\\docker build -t dockerapp:${DOCKER_TAG}  .'
+      
+        bat label: '', script: 'set DOCKER_HOME="C:\\Program Files\\Docker\\Docker\\Resources\\bin\\docker" && %DOCKER_HOME% build -t dockerapp:${DOCKER_TAG}  .'
     
       }
     }
